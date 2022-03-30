@@ -22,9 +22,19 @@ public class BasePage {
     @FindBy(xpath = "//ul[@id='appmenu']//a")
     public List<WebElement> subModules;
 
+    @FindBy(xpath = "//ul[@aria-label='Files']//h3")
+    public WebElement expectedSearchResult;
+
+    @FindBy(xpath = "//input[@aria-label='Reset search']")
+    public WebElement resetsearchBtn;
+
+    @FindBy(xpath = "(//div[@class='empty-content']//h2[@class='empty-content__title'])[1]")
+    public WebElement NoResultMessageForSearch;
+
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
     public void navigateToModule(String module){
         module=module.toLowerCase();
