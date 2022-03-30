@@ -14,12 +14,13 @@ public class US8 {
     FilesPage filesPage = new FilesPage();
     String beforeDeleteFolderText;
 
-    @And("user choose the Delete folder option")
-    public void userChooseTheOption() {
+    @And("user choose the {string} option")
+    public void userChooseTheOption(String str) {
         beforeDeleteFolderText=filesPage.chosenFolderForDelete.getText();
-        BrowserUtils.waitForClickablility(filesPage.deleteFolderBtn,5);
-        BrowserUtils.highlight(filesPage.deleteFolderBtn);
-        BrowserUtils.clickWithTimeOut(filesPage.deleteFolderBtn,5);
+        filesPage.actionIconSubOptionsNavigate(str);
+//        BrowserUtils.waitForClickablility(filesPage.deleteFolderBtn,5);
+//        BrowserUtils.highlight(filesPage.deleteFolderBtn);
+//        BrowserUtils.clickWithTimeOut(filesPage.deleteFolderBtn,5);
     }
 
     @When("the user clicks the {string} sub-module")

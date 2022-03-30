@@ -97,10 +97,24 @@ public class FilesPage {
     @FindBy(xpath = "//span[.=' Restore']/..")
     public List<WebElement> restoreBtn;
 
+    @FindBy(xpath = "(//li[@class='app-sidebar-tabs__tab'])[2]")
+    public WebElement CommentModule;
+
+    @FindBy(xpath = "//div[@data-placeholder='New comment …']")
+    public WebElement commentInputBox;
+
+    @FindBy(xpath = "(//input[@type='submit'])[2]")
+    public WebElement commentSubmitBtn;
+
+    @FindBy(xpath = "//div[@class='submitLoading icon-loading-small hidden']")
+    public WebElement submitLoadingIcon;
+
     public WebElement uploadedFileLocator(String uploadedFileName){
         String locatorForUploadedFile="(//span[.='"+uploadedFileName+"'])[2]";
         return Driver.getDriver().findElement(By.xpath(locatorForUploadedFile));
     }
+
+
 
     public void actionIconSubOptionsNavigate(String optionName){
         ////div[@id='rightClickMenu']//span[.='"+optionName+"']/..
@@ -109,5 +123,20 @@ public class FilesPage {
         Driver.getDriver().findElement(By.xpath(optionLocator)).click();
     }
 
+    public void GoToActionIconsModule(String module){
+        module=module.toLowerCase();
+        if(module.equals("add to favorites")){
+            module="favorite";
+        }else if(module.equals("Move or copy")){
+            module="movecopy";
+        }else if(module.equals("Delete folder") || module.equals("Delete file")){
+            module="delete";
+        }
+        String locator="//div[@class='fileActionsMenu popovermenu bubble open menu']//li[@class=' action-"+module+"-container']";
+        WebElement eachModule = Driver.getDriver().findElement(By.xpath(locator));
+        BrowserUtils.waitForClickablility(eachModule,5);
+        BrowserUtils.highlight(eachModule);
+        BrowserUtils.clickWithTimeOut(eachModule,5);
+    }
 
     }
