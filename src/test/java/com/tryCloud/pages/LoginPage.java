@@ -11,6 +11,10 @@ import java.util.List;
 // http://qa2.trycloud.net/index.php/login
 public class LoginPage {
 
+    public LoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     @FindBy(id = "user")
     public WebElement userInput;
 
@@ -24,11 +28,6 @@ public class LoginPage {
     public WebElement warningMessage;
 
 
-
-
-    public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     public void login(){
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));

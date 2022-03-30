@@ -12,6 +12,10 @@ import java.util.List;
 // http://qa2.trycloud.net/index.php/apps/spreed/
 public class TalkPage {
 
+    public TalkPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     @FindBy(css = "input[type='text']")
     public WebElement searchinputBox;
 
@@ -34,7 +38,5 @@ public class TalkPage {
         BrowserUtils.waitForPageToLoad(5);
     }
 
-    public TalkPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 }

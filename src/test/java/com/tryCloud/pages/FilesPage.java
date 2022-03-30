@@ -1,21 +1,20 @@
 package com.tryCloud.pages;
-
 import com.tryCloud.utilities.BrowserUtils;
-import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.List;
 
 // http://qa2.trycloud.net/index.php/apps/files/?dir=/&fileid=200
 public class FilesPage {
+
+    public FilesPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     @FindBy(css = "label[for='select_all_files']")
     public WebElement firstCheckBox;
@@ -91,9 +90,7 @@ public class FilesPage {
 
     @FindBy(xpath = "//tr//span[@class='innernametext']/..")
     public List<WebElement> deletedFilesFoldersList;
-    public FilesPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy(xpath = "//span[.=' Restore']/..")
     public List<WebElement> restoreBtn;
