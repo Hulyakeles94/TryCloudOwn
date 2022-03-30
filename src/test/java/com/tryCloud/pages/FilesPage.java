@@ -1,6 +1,7 @@
 package com.tryCloud.pages;
 
 import com.tryCloud.utilities.BrowserUtils;
+import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -114,7 +115,41 @@ public class FilesPage {
         return Driver.getDriver().findElement(By.xpath(locatorForUploadedFile));
     }
 
+    @FindBy(xpath = "//ul[@class='with-icon']/li")
+    public List<WebElement> leftCornerModules;
 
+    @FindBy(xpath = "//input[@class='checkbox']")
+    public List<WebElement> settingCheckBoxesVerification;
+
+    @FindBy(xpath = "//input[@class='checkbox']/..")
+    public List<WebElement> settingCheckBoxesSelection;
+
+    @FindBy(xpath = "//li[@id='quota']//p")
+    public WebElement usageBtn;
+
+    public void GoToLeftCornerModule(String moduleName){
+        moduleName=moduleName.toLowerCase();
+        if(moduleName.contains("all files")){
+            leftCornerModules.get(0).click();
+        }else if (moduleName.contains("recent")){
+            leftCornerModules.get(1).click();
+        }else if (moduleName.contains("favorites")){
+            leftCornerModules.get(2).click();
+        }else if (moduleName.contains("shares")){
+            leftCornerModules.get(3).click();
+        }else if (moduleName.contains("Tags")){
+            leftCornerModules.get(4).click();
+        }else if (moduleName.contains("Shared to Circles")){
+            leftCornerModules.get(5).click();
+        }else if (moduleName.contains("Deleted files")){
+            leftCornerModules.get(6).click();
+        }else if (moduleName.contains("used")){
+            leftCornerModules.get(7).click();
+        }else if(moduleName.contains("settings")) {
+            Driver.getDriver().findElement(By.xpath("//div[@id='app-settings-header']//button")).click();
+        }
+        BrowserUtils.waitForPageToLoad(10);
+    }
 
     public void actionIconSubOptionsNavigate(String optionName){
         ////div[@id='rightClickMenu']//span[.='"+optionName+"']/..

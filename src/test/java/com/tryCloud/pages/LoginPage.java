@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 // http://qa2.trycloud.net/index.php/login
 public class LoginPage {
 
@@ -21,6 +23,9 @@ public class LoginPage {
     @FindBy(css = ".warning")
     public WebElement warningMessage;
 
+
+
+
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -31,4 +36,6 @@ public class LoginPage {
         passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
         loginBtn.click();
     }
+
+
 }
