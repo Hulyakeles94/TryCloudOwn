@@ -28,8 +28,15 @@ public class BasePage {
 
     public void navigateToModule(String module){
         module=module.toLowerCase();
-        String locator = "//ul[@id='appmenu']//li[@data-id='"+module+"']";
-        Driver.getDriver().findElement(By.xpath(locator)).click();
-        BrowserUtils.waitForPageToLoad(5);
+        String locator;
+        if(module.equals("talk")){
+            locator = "//ul[@id='appmenu']//li[@data-id='spreed']";
+            Driver.getDriver().findElement(By.xpath(locator)).click();
+            BrowserUtils.waitForPageToLoad(5);
+        }else{
+            locator = "//ul[@id='appmenu']//li[@data-id='"+module+"']";
+            Driver.getDriver().findElement(By.xpath(locator)).click();
+            BrowserUtils.waitForPageToLoad(5);
+        }
     }
 }

@@ -1,8 +1,9 @@
+@wip
 Feature: As a user, I should be able to access to Talks module
   Scenario: verify users to access to Talks module
     Given user on the dashboard page
     When the user clicks the "Talk" module
-    Then verify the page title is "Talk - Trycloud QA"
+    Then verify the page title is "Talk - Trycloud"
   Scenario: verify users to send a message
     Given user on the dashboard page
     When the user clicks the "Talk" module
