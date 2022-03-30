@@ -1,5 +1,7 @@
 package com.tryCloud.pages;
 
+import com.tryCloud.utilities.BrowserUtils;
+import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -28,6 +30,6 @@ public class BasePage {
         module=module.toLowerCase();
         String locator = "//ul[@id='appmenu']//li[@data-id='"+module+"']";
         Driver.getDriver().findElement(By.xpath(locator)).click();
-
+        BrowserUtils.waitForPageToLoad(5);
     }
 }
