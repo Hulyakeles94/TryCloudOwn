@@ -1,7 +1,6 @@
 package com.tryCloud.pages;
 
 import com.tryCloud.utilities.BrowserUtils;
-import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -38,7 +37,7 @@ public class BasePage {
 
     public void navigateToModule(String module){
         module=module.toLowerCase();
-        String locator;
+        String locator="";
         if(module.equals("talk")){
             locator = "//ul[@id='appmenu']//li[@data-id='spreed']";
             Driver.getDriver().findElement(By.xpath(locator)).click();

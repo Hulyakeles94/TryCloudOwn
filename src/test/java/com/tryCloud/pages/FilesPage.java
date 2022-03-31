@@ -149,7 +149,6 @@ public class FilesPage {
     }
 
     public void actionIconSubOptionsNavigate(String optionName){
-        ////div[@id='rightClickMenu']//span[.='"+optionName+"']/..
         String optionLocator="//span[.='"+optionName+"']/..";
         BrowserUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath(optionLocator)),5);
         Driver.getDriver().findElement(By.xpath(optionLocator)).click();
