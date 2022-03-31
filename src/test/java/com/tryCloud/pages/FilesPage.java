@@ -43,7 +43,7 @@ public class FilesPage {
     @FindBy(xpath = "//a[@class='button new']")
     public WebElement addIcon;
 
-    @FindBy(xpath = "//input[@class='hiddenuploadfield']")
+    @FindBy(xpath = "//input[@id='file_upload_start']")
     public WebElement uploadFileBtn;
 
     @FindBy(xpath = "//span[.='Delete file']")

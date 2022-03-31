@@ -6,6 +6,7 @@ import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class US7 {
     FilesPage filesPage=new FilesPage();
@@ -41,13 +42,10 @@ public class US7 {
     }
     @When("the user uploads a file with the upload file option")
     public void the_user_uploads_a_file_with_the_upload_file_option() {
-        String path = "src/test/resources/files/HULYAFILE.jpg";
-
-        BrowserUtils.hover(filesPage.uploadFileBtn);
-        BrowserUtils.waitForVisibility(filesPage.uploadFileBtn,5);
+        String pathofObject = System.getProperty("user.dir");
+        String path=pathofObject+"/src/test/resources/files/HULYAFILE.jpg";
         filesPage.uploadFileBtn.sendKeys(path);
-//        filesPage.GoToMenuItemOption("Upload file").sendKeys(path);
-        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForPageToLoad(10);
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
         filesPage.addIcon.click();
     }
