@@ -12,6 +12,7 @@ public class US7 {
 
     @When("user click \"new folder”")
     public void user_click_new_folder() {
+//        filesPage.GoToMenuItemOption("New folder").click();
         BrowserUtils.waitForClickablility(filesPage.newFolderBtn,10);
         filesPage.newFolderBtn.click();
     }
@@ -41,8 +42,11 @@ public class US7 {
     @When("the user uploads a file with the upload file option")
     public void the_user_uploads_a_file_with_the_upload_file_option() {
         String path = "src/test/resources/files/HULYAFILE.jpg";
-        BrowserUtils.highlight(filesPage.uploadFileBtn);
+
+        BrowserUtils.hover(filesPage.uploadFileBtn);
+        BrowserUtils.waitForVisibility(filesPage.uploadFileBtn,5);
         filesPage.uploadFileBtn.sendKeys(path);
+//        filesPage.GoToMenuItemOption("Upload file").sendKeys(path);
         BrowserUtils.waitForPageToLoad(5);
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
         filesPage.addIcon.click();

@@ -40,7 +40,7 @@ public class FilesPage {
     @FindBy(xpath = "(//tr[1]//span[@class='innernametext'])[2]")
     public WebElement chosenFavOptionInList;
 
-    @FindBy(xpath = "//*[@class='button new']")
+    @FindBy(xpath = "//a[@class='button new']")
     public WebElement addIcon;
 
     @FindBy(xpath = "//input[@class='hiddenuploadfield']")
@@ -168,6 +168,15 @@ public class FilesPage {
         BrowserUtils.waitForClickablility(eachModule,5);
         BrowserUtils.highlight(eachModule);
         BrowserUtils.clickWithTimeOut(eachModule,5);
+    }
+
+    public WebElement GoToMenuItemOption(String option){
+        BrowserUtils.waitForPageToLoad(5);
+        String locator = "//ul//span[.='"+option+"']/..";
+        WebElement optionLocator = Driver.getDriver().findElement(By.xpath(locator));
+        BrowserUtils.highlight(optionLocator);
+        return optionLocator;
+
     }
 
     }

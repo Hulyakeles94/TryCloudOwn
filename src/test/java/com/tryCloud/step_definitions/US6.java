@@ -28,6 +28,7 @@ public class US6 {
     @When("the user clicks the add icon on the top")
     public void the_user_clicks_the_add_icon_on_the_top() {
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
+        BrowserUtils.hover(filesPage.addIcon);
         filesPage.addIcon.click();
     }
     @When("users uploads file with the “upload file” option")
