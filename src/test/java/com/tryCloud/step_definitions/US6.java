@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class US6 {
     FilesPage filesPage = new FilesPage();
-    String path;
+//    String path;
 
     @When("user choose the Remove from favorites option")
     public void user_choose_the_remove_from_favorites_option() {
@@ -32,8 +32,8 @@ public class US6 {
         filesPage.addIcon.click();
     }
     @When("users uploads file with the “upload file” option")
-    public void users_uploads_file_with_the_upload_file_option() {
-        path = System.getProperty("user.dir")+"/src/test/resources/files/HOME.jpg";
+   public void users_uploads_file_with_the_upload_file_option() {
+        String path = System.getProperty("user.dir")+"/src/test/resources/files/HOME.jpg";
 
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);
