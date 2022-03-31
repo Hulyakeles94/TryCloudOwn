@@ -12,6 +12,7 @@ public class US7 {
 
     @When("user click \"new folder”")
     public void user_click_new_folder() {
+        BrowserUtils.waitForClickablility(filesPage.newFolderBtn,10);
         filesPage.newFolderBtn.click();
     }
 
@@ -34,6 +35,7 @@ public class US7 {
 
     @When("user choose a folder from the page")
     public void user_choose_a_folder_from_the_page() {
+        BrowserUtils.waitForClickablility(filesPage.newFolderLocation,10);
         filesPage.newFolderLocation.click();
     }
     @When("the user uploads a file with the upload file option")
