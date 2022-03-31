@@ -32,7 +32,7 @@ public class US6 {
     }
     @When("users uploads file with the “upload file” option")
     public void users_uploads_file_with_the_upload_file_option() {
-        path = "C:\\Users\\zbura\\OneDrive\\Desktop\\HOME.jpg";
+        path = "src/test/resources/files/HOME.jpg";
 
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);

@@ -39,7 +39,7 @@ public class US10 {
     public void user_uploads_file_with_the_upload_file_option() {
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
         filesPage.addIcon.click();
-        path = "C:\\Users\\zbura\\OneDrive\\Desktop\\HOME.jpg";
+        path = "src/test/resources/files/HOME.jpg";
 
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);
