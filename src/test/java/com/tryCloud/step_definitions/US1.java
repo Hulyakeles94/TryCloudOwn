@@ -15,7 +15,7 @@ public class US1 {
     public void user_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         String actualTittle = Driver.getDriver().getTitle();
-        Assert.assertTrue(actualTittle.contains("Trycloudfffferfes"));
+        Assert.assertTrue(actualTittle.contains("Trycloud"));
     }
     @When("user enters username {string} and password {string}")
     public void user_enters_username_and_password(String string, String string2) {
