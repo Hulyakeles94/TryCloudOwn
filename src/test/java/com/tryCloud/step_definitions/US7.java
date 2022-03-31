@@ -38,7 +38,7 @@ public class US7 {
     }
     @When("the user uploads a file with the upload file option")
     public void the_user_uploads_a_file_with_the_upload_file_option() {
-        String path = "C:\\Users\\zbura\\OneDrive\\Desktop\\HULYAFILE.jpg";
+        String path = "src/test/resources/files/HULYAFILE.jpg";
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);
         BrowserUtils.waitForPageToLoad(5);
