@@ -44,7 +44,7 @@ public class US6 {
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);
         BrowserUtils.waitForPageToLoad(5);
-        filesPage.addIcon.click();
+//        filesPage.addIcon.click();
     }
     @Then("verify the file is displayed on the page")
     public void verify_the_file_is_displayed_on_the_page() {
