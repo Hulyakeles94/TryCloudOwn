@@ -18,6 +18,7 @@ public class BasePage {
     public WebElement searchInput;
 
     //this list of web elements contains 1 extra at the end
+    //Dashboard,Files,Photos,Activity ect
     @FindBy(xpath = "//ul[@id='appmenu']//a")
     public List<WebElement> subModules;
 
@@ -27,6 +28,10 @@ public class BasePage {
     @FindBy(xpath = "//input[@aria-label='Reset search']")
     public WebElement resetsearchBtn;
 
+    @FindBy(xpath = "//span//h3")
+    public WebElement firstSearchedResult;
+
+    //when you search something that not exist
     @FindBy(xpath = "(//div[@class='empty-content']//h2[@class='empty-content__title'])[1]")
     public WebElement NoResultMessageForSearch;
 
@@ -47,5 +52,12 @@ public class BasePage {
             Driver.getDriver().findElement(By.xpath(locator)).click();
             BrowserUtils.waitForPageToLoad(5);
         }
+    }
+
+    public void navigateToModule1(String module){
+        String locator = "//ul[@id='appmenu']//a[@aria-label='"+module+"']";
+        WebElement eachModule = Driver.getDriver().findElement(By.xpath(locator));
+        BrowserUtils.highlight(eachModule);
+        eachModule.click();
     }
 }

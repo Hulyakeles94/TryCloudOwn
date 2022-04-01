@@ -1,4 +1,4 @@
-
+@us8
 Feature: As a user, I should be able to delete a file/folder.
   Scenario: Verify users delete a file/folder
     Given user on the dashboard page

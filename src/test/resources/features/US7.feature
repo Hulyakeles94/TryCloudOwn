@@ -1,4 +1,4 @@
-
+@us7
 Feature: As a user, I should be able to remove files from the favorites and upload a file directly
   Scenario: Verify users can add the folder
     Given user on the dashboard page

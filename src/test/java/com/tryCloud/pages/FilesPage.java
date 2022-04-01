@@ -22,10 +22,10 @@ public class FilesPage {
     @FindBy(xpath = "//tbody//tr//td//input[@type='checkbox']/../..")
     public List<WebElement> allCheckBoxes;
 
-    @FindBy(xpath = "//tr[1]//a[@data-action='menu']//span")
+    @FindBy(xpath = "//a[@data-action='menu']//span/..")
     public WebElement first3dots;
 
-    @FindBy(xpath = "//a[@data-action='Favorite']//span")
+    @FindBy(xpath = "//a[@data-action='Favorite']")
     public WebElement addToFavorites;
 
     @FindBy(id = "app-navigation-toggle")
@@ -46,7 +46,7 @@ public class FilesPage {
     @FindBy(xpath = "//input[@id='file_upload_start']")
     public WebElement uploadFileBtn;
 
-    @FindBy(xpath = "//span[.='Delete file']")
+    @FindBy(xpath = "//span[.='Delete file']/..")
     public WebElement deleteFileBtn;
 
     @FindBy(xpath = "//div[@id='uploadprogressbar']")
@@ -125,6 +125,7 @@ public class FilesPage {
     public WebElement usageBtn;
 
     public void GoToLeftCornerModule(String moduleName){
+        BrowserUtils.sleep(5);
         moduleName=moduleName.toLowerCase();
         if(moduleName.contains("all files")){
             leftCornerModules.get(0).click();
@@ -151,6 +152,7 @@ public class FilesPage {
     public void actionIconSubOptionsNavigate(String optionName){
         String optionLocator="//span[.='"+optionName+"']/..";
         BrowserUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath(optionLocator)),5);
+        BrowserUtils.highlight(Driver.getDriver().findElement(By.xpath(optionLocator)));
         Driver.getDriver().findElement(By.xpath(optionLocator)).click();
     }
 

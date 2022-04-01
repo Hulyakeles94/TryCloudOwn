@@ -6,7 +6,6 @@ import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 
 public class US7 {
     FilesPage filesPage=new FilesPage();
