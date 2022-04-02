@@ -22,6 +22,7 @@ public class US9 {
     @When("user write a {string} comment inside the input box")
     public void user_write_a_comment_inside_the_input_box(String string) {
         BrowserUtils.waitForClickablility(filesPage.commentInputBox,5);
+        BrowserUtils.highlight(filesPage.commentInputBox);
         filesPage.commentInputBox.click();
         filesPage.commentInputBox.sendKeys(string);
     }

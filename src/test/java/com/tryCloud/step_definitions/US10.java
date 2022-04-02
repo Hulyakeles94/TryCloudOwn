@@ -11,6 +11,7 @@ import org.junit.Assert;
 public class US10 {
     FilesPage filesPage=new FilesPage();
     int currentUsage;
+    String pathofObject = System.getProperty("user.dir");
     String path;
     @When("user clicks {string} dropdown module")
     public void user_clicks_dropdown_module(String string) {
@@ -37,9 +38,9 @@ public class US10 {
     }
     @When("user  uploads file with the upload file option")
     public void user_uploads_file_with_the_upload_file_option() {
+        path=pathofObject+"/src/test/resources/files/HULYAFILE.jpg";
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
         filesPage.addIcon.click();
-        path = "src/test/resources/files/HOME.jpg";
 
         BrowserUtils.highlight(filesPage.uploadFileBtn);
         filesPage.uploadFileBtn.sendKeys(path);

@@ -22,7 +22,7 @@ public class BasePage {
     @FindBy(xpath = "//ul[@id='appmenu']//a")
     public List<WebElement> subModules;
 
-    @FindBy(xpath = "//ul[@aria-label='Files']//h3")
+    @FindBy(xpath = "//a[@class='unified-search__result unified-search__result--focused']//h3//span")
     public WebElement expectedSearchResult;
 
     @FindBy(xpath = "//input[@aria-label='Reset search']")

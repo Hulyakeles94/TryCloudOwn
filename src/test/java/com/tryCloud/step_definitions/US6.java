@@ -49,7 +49,7 @@ public class US6 {
     @Then("verify the file is displayed on the page")
     public void verify_the_file_is_displayed_on_the_page() {
       Assert.assertTrue(filesPage.uploadedFileLocation.isDisplayed());
-
+        BrowserUtils.waitForVisibility(filesPage.chosenUploadedFile3dots,5);
         filesPage.chosenUploadedFile3dots.click();
        BrowserUtils.waitForClickablility(filesPage.deleteFileBtn,5);
        BrowserUtils.highlight(filesPage.deleteFileBtn);
