@@ -38,7 +38,7 @@ public class US10 {
     }
     @When("user  uploads file with the upload file option")
     public void user_uploads_file_with_the_upload_file_option() {
-        path=pathofObject+"/src/test/resources/files/HULYAFILE.jpg";
+        path=pathofObject+"/src/test/resources/files/HOME.jpg";
         BrowserUtils.waitForClickablility(filesPage.addIcon,5);
         filesPage.addIcon.click();
 

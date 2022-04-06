@@ -19,7 +19,6 @@ public class US11 {
         talkPage.writeMessageOrMentionSomeoneInput.click();
         talkPage.writeMessageOrMentionSomeoneInput.sendKeys(string);
         BrowserUtils.waitForClickablility(talkPage.submitBtn,5);
-
     }
     @When("user clicks to submit button")
     public void user_clicks_to_submit_button() {
